@@ -7,16 +7,16 @@ public class Recuperacion_RA3_RA4
 {
     /**
      * Este método sirve para generar los números primos de la clase
-     * @param max Variable entera que se inicializa en 2 y sirve para indicar el tamaño de la array
+     * @param Tam Variable entera que sirve para indicar el tamaño de la array
      */
-    public static int[] generarPrimos (int max)
+    public static int[] generarPrimo(int Tam)
     {
         int i,j;
-        if (max >= 2) {
+        if (Tam >= 2) {
 
 
             // Declaraciones
-            int dim = max + 1; // Tamaño del array
+            int dim = Tam + 1; // Tamaño del array
             boolean[] esPrimo = new boolean[dim];
 
             // Inicializar el array
@@ -35,12 +35,8 @@ public class Recuperacion_RA3_RA4
                 }
             }
 
-            // ¿Cuántos primos hay?
-            int cuenta = 0;
-            for (i=0; i<dim; i++) {
-                if (esPrimo[i])
-                    cuenta++;
-            }
+            int cuenta = numeroPrimos(dim, esPrimo);
+
             // Rellenar el vector de números primos
             int[] primos = new int[cuenta];
             for (i=0, j=0; i<dim; i++) {
@@ -50,9 +46,20 @@ public class Recuperacion_RA3_RA4
 
             return primos;
 
-        } else { // max < 2
+        } else { // Tam < 2
 
             return new int[0]; // Vector vacío
         }
+    }
+
+    private static int numeroPrimos(int dim, boolean[] esPrimo) {
+        int i;
+        // ¿Cuántos primos hay?
+        int cuenta = 0;
+        for (i=0; i< dim; i++) {
+            if (esPrimo[i])
+                cuenta++;
+        }
+        return cuenta;
     }
 }
