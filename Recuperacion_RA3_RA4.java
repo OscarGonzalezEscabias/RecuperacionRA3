@@ -1,10 +1,19 @@
+/**
+ * Este clase sirve para generar números primos de 1 hasta un número máximo especificado por el usuario
+ * @author Óscar González Escabias
+ * @version 1.0.0
+ */
 public class Recuperacion_RA3_RA4
 {
-
+    /**
+     * Este método sirve para generar los números primos de la clase
+     * @param max Variable entera que se inicializa en 2 y sirve para indicar el tamaño de la array
+     */
     public static int[] generarPrimos (int max)
     {
         int i,j;
         if (max >= 2) {
+
 
             // Declaraciones
             int dim = max + 1; // Tamaño del array
@@ -32,7 +41,7 @@ public class Recuperacion_RA3_RA4
                 if (esPrimo[i])
                     cuenta++;
             }
-// Rellenar el vector de números primos
+            // Rellenar el vector de números primos
             int[] primos = new int[cuenta];
             for (i=0, j=0; i<dim; i++) {
                 if (esPrimo[i])
